@@ -13,6 +13,14 @@ The process is:
 
 This may take a moment, especially on large resolutions.  (30 seconds on my laptop.)
 
+Here are a few especially pleasing ones:
+
+![Pretty and colorful blobs from time 1571085498](output_1571085498.png)
+
+![Pretty and colorful blobs from time 1571086617](output_1571086617.png)
+
+![Pretty and colorful blobs from time 1571086905](output_1571086905.png)
+
 ## Table of Contents
 
 - [Install](#install)

@@ -12,13 +12,13 @@ import sys
 CONTEXT = dict(
     w=1920,
     h=1080,
-    colpoints_n=30,
+    colpoints_n=14,
     # Stddev of the noise added to the position:
     samplenoise_stddev=40.0,
     sample_mindist=1e-10,
     # Should be between -inf and 0.  "closer to -inf" makes the colorful blobs "sharper".
     # Positive values make everything weird.
-    sample_distalpha=-2,
+    sample_distalpha=-2.5,
     r=secrets.SystemRandom(),
 )
 
