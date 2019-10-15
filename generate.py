@@ -13,19 +13,30 @@ CONTEXT = dict(
     w=1920,
     h=1080,
     colpoints_n=14,
+    colpoints_margin=100,
     # Stddev of the noise added to the position:
     samplenoise_stddev=40.0,
     sample_mindist=1e-10,
     # Should be between -inf and 0.  "closer to -inf" makes the colorful blobs "sharper".
     # Positive values make everything weird.
     sample_distalpha=-2.5,
+    colorspace_gamma=1.8,
     r=secrets.SystemRandom(),
 )
 
 
+def sample_point(ctx):
+    return (ctx['colpoints_margin'] + ctx['r'].random() * (ctx['w'] - 2 * ctx['colpoints_margin']),
+            ctx['colpoints_margin'] + ctx['r'].random() * (ctx['h'] - 2 * ctx['colpoints_margin']))
+
+
+def sample_channel(ctx):
+    return ctx['r'].random() ** (1 / ctx['colorspace_gamma'])
+
+
 def sample_colpoint(ctx):
-    pos = (ctx['r'].random() * ctx['w'], ctx['r'].random() * ctx['h'])
-    rgb = (ctx['r'].random(), ctx['r'].random(), ctx['r'].random())
+    pos = sample_point(ctx)
+    rgb = (sample_channel(ctx), sample_channel(ctx), sample_channel(ctx))
     return (pos, rgb)
 
 
@@ -51,7 +62,7 @@ def sample_pixel_at(x, y, ctx):
     ak_r /= ak_weight
     ak_g /= ak_weight
     ak_b /= ak_weight
-    return (ak_r, ak_g, ak_b)
+    return (ak_r ** ctx['colorspace_gamma'], ak_g ** ctx['colorspace_gamma'], ak_b ** ctx['colorspace_gamma'])
 
 
 def clamp(v):
