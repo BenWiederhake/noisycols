@@ -21,6 +21,8 @@ Here are a few especially pleasing ones:
 
 ![Pretty and colorful blobs from time 1571086905](output_1571086905.png)
 
+![Pretty and colorful blobs from time 1571174119](output_1571174119.png)
+
 ## Table of Contents
 
 - [Install](#install)
