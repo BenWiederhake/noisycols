@@ -2,5 +2,5 @@
 
 set -e
 
-cd "$(dirname $0)"
+cd ~/workspace/noisycols/
 ./generate.py output_$(date +%s).png
