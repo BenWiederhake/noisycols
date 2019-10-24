@@ -12,7 +12,7 @@ import sys
 CONTEXT = dict(
     w=1920,
     h=1080,
-    colpoints_n=14,
+    colpoints_n=10,
     colpoints_margin=100,
     # Stddev of the noise added to the position:
     samplenoise_stddev=40.0,
@@ -31,7 +31,7 @@ def sample_point(ctx):
 
 
 def sample_channel(ctx):
-    return ctx['r'].random() ** (1 / ctx['colorspace_gamma'])
+    return ctx['r'].random() ** ctx['colorspace_gamma']
 
 
 def sample_colpoint(ctx):
@@ -62,7 +62,7 @@ def sample_pixel_at(x, y, ctx):
     ak_r /= ak_weight
     ak_g /= ak_weight
     ak_b /= ak_weight
-    return (ak_r ** ctx['colorspace_gamma'], ak_g ** ctx['colorspace_gamma'], ak_b ** ctx['colorspace_gamma'])
+    return (ak_r ** (1 / ctx['colorspace_gamma']), ak_g ** (1 / ctx['colorspace_gamma']), ak_b ** (1 / ctx['colorspace_gamma']))
 
 
 def clamp(v):
