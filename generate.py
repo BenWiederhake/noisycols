@@ -19,7 +19,7 @@ CONTEXT = dict(
     sample_mindist=1e-10,
     # Should be between -inf and 0.  "closer to -inf" makes the colorful blobs "sharper".
     # Positive values make everything weird.
-    sample_distalpha=-2.5,
+    sample_distalpha=-1.9,
     colorspace_gamma=1.8,
     r=secrets.SystemRandom(),
 )
