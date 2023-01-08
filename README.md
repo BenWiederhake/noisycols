@@ -1,6 +1,6 @@
 # noisycols
 
-> Makes pretty images from noisy, colorful blobs.
+Makes pretty images from noisy, colorful blobs.
 
 The process is:
 - Sample a few special points.  These will be the centers of the blobs.  (Currently: Uniform, independent.)
@@ -15,7 +15,7 @@ This may take a moment, especially on large resolutions.  (30 seconds on my lapt
 
 Here are a few especially pleasing ones:
 
-![Pretty and colorful blobs from time 1571085498](output_1571085498.png)
+![Pretty and colorful blobs from time 1571088268](output_1571088268.png)
 
 ![Pretty and colorful blobs from time 1571086617](output_1571086617.png)
 
